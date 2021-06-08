@@ -11,6 +11,9 @@ enum tap_dance_codes {
 
 //Redefine all the constants I need to make them an even number of spaces.
 enum custom_keycodes {
+    TP_____NO = KC_NO,
+    TP_______ = KC_NO,
+    TP_TRANSP = KC_TRANSPARENT,
     TP_RGBSLD = ML_SAFE_RANGE,
     TP_BSLASH = KC_BSLASH,
     TP_BSPACE = KC_BSPACE,
@@ -30,10 +33,8 @@ enum custom_keycodes {
     TP__SLASH = KC_SLASH,
     TP__SPACE = KC_SPACE,
     TP____TAB = KC_TAB,
-    TP_TRANSP = KC_TRANSPARENT,
     TP__LBRKT = KC_LBRACKET,
     TP___LCBR = KC_LCBR,
-    TP_____NO = KC_NO,
     TP__RBRKT = KC_RBRACKET,
     TP___RCBR = KC_RCBR,
     TP___RABK = KC_RABK,
@@ -69,6 +70,7 @@ enum custom_keycodes {
     TP__LLLL1 = LALT(LCTL(LGUI(LSFT(KC_1)))),
     TP__LLLL2 = LALT(LCTL(LGUI(LSFT(KC_2)))),
     TP__LLLL3 = LALT(LCTL(LGUI(LSFT(KC_3)))),
+    TP__LLLL4 = LALT(LCTL(LGUI(LSFT(KC_4)))),
     TP_RGBVAD = RGB_VAD,
     TP_RGBTOG = RGB_TOG,
     TP_RGBMOD = RGB_MOD,
@@ -115,29 +117,32 @@ enum custom_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  //Base Layer
   [0] = LAYOUT_moonlander(
     TP__GRAVE, TP______1, TP______2, TP______3, TP______4, TP______5, TP_TRANSP,                       TP_TRANSP, TP______6, TP______7, TP______8, TP______9, TP______0, TP__MINUS,
     TP____TAB, TP______Q, TP______W, TP______E, TP______R, TP______T, TP__LLLLS,                       TP_DNCE02, TP______Y, TP______U, TP______I, TP______O, TP______P, TP_BSLASH,
     TP_ESCAPE, TP______A, TP______S, TP______D, TP______F, TP______G, TP__LLLLM,                       TP_DNCE01, TP______H, TP______J, TP______K, TP______L, TP_SCOLON, TP__QUOTE,
     TP_LSHIFT, TP______Z, TP______X, TP_DNCE00, TP______V, TP______B,                                             TP______N, TP______M, TP__COMMA, TP____DOT, TP__SLASH, TP_RSHIFT,
-    TP_TRANSP, TP__LCTRL, TP___LALT, TP___LGUI, TP_LMMGUI,                       TP__LLLSP, TP_LLLLSP,                       TP__SPACE, TP_TRANSP, TP_TRANSP, TP_TRANSP, TP_TRANSP,
+    TP__LLLL4, TP__LCTRL, TP___LALT, TP___LGUI, TP_LMMGUI,                       TP__LLLSP, TP_LLLLSP,                       TP__SPACE, TP_TRANSP, TP_TRANSP, TP_TRANSP, TP_______,
                                                            TP_BSPACE, TP___MO01, TP___MO02, TP_LGUISP, TP__ENTER, TP__SPACE
   ),
+  //Nav Layer
   [1] = LAYOUT_moonlander(
-    TP__LLLLL, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_RGBVAD,                       TP_RGBVAI, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP__RESET,
-    TP____TAB, TP_____NO, TP_____NO, TP__LLLL3, TP__LBRKT, TP__RBRKT, TP_RGBTOG,                       TP__VOLUP, TP__LLLTB, TP__LLLTB, TP___LLTB, TP___LLTB, TP_____NO, TP_____NO,
-    TP_____NO, TP__LLLL1, TP_____NO, TP_____NO, TP___LCBR, TP___RCBR, TP_RGBMOD,                       TP__VOLDN, TP___LEFT, TP___DOWN, TP_____UP, TP__RIGHT, TP_____NO, TP_____NO,
-    TP_LSHIFT, TP_____NO, TP_____NO, TP__LLLL2, TP_DNCE03, TP___RABK,                                             TP__LLGRV, TP__LLGRV, TP___LGRV, TP___LGRV, TP___LLL6, TP___LLL7,
-    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_TRANSP,                       TP_____NO, TP_____NO,                       TP___LLL2, TP___LLL1, TP___LLL3, TP___LLL4, TP___LLL5,
-                                                           TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP___LLL8
+    TP__LLLLL, TP_______, TP_______, TP_______, TP_______, TP_______, TP_RGBVAD,                       TP_RGBVAI, TP_______, TP_______, TP_______, TP_______, TP_______, TP__RESET,
+    TP____TAB, TP_______, TP_______, TP__LLLL3, TP__LBRKT, TP__RBRKT, TP_RGBTOG,                       TP__VOLUP, TP__LLLTB, TP__LLLTB, TP___LLTB, TP___LLTB, TP_______, TP_______,
+    TP_______, TP__LLLL1, TP_______, TP_______, TP___LCBR, TP___RCBR, TP_RGBMOD,                       TP__VOLDN, TP___LEFT, TP___DOWN, TP_____UP, TP__RIGHT, TP_______, TP_______,
+    TP_LSHIFT, TP_______, TP_______, TP__LLLL2, TP_DNCE03, TP___RABK,                                             TP__LLGRV, TP__LLGRV, TP___LGRV, TP___LGRV, TP___LLL6, TP___LLL7,
+    TP_______, TP_______, TP_______, TP_______, TP_TRANSP,                       TP_______, TP_______,                       TP___LLL2, TP___LLL1, TP___LLL3, TP___LLL4, TP___LLL5,
+                                                           TP_______, TP_______, TP_______, TP_______, TP_______, TP___LLL8
   ),
+  //Num Layer
   [2] = LAYOUT_moonlander(
-    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO,                       TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO,
-    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO,                       TP_____NO, TP_____NO, TP______7, TP______8, TP______9, TP_____NO, TP_____NO,
-    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO,                       TP_____NO, TP_____NO, TP______4, TP______5, TP______6, TP_____NO, TP_____NO,
-    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO,                                             TP_____NO, TP______1, TP______2, TP______3, TP_____NO, TP_____NO,
-    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO,                       TP_____NO, TP_____NO,                       TP______0, TP______0, TP____DOT, TP_____NO, TP_____NO,
-                                                           TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO
+    TP_______, TP_______, TP_______, TP_______, TP_______, TP_______, TP_______,                       TP_______, TP_______, TP_______, TP_______, TP_______, TP_______, TP_______,
+    TP_______, TP_______, TP_______, TP_______, TP_______, TP_______, TP_______,                       TP_______, TP_______, TP______7, TP______8, TP______9, TP_______, TP_______,
+    TP_______, TP_______, TP_______, TP_______, TP_______, TP_______, TP_______,                       TP_______, TP_______, TP______4, TP______5, TP______6, TP_______, TP_______,
+    TP_______, TP_______, TP_______, TP_______, TP_______, TP_______,                                             TP_______, TP______1, TP______2, TP______3, TP_______, TP_______,
+    TP_______, TP_______, TP_______, TP_______, TP_______,                       TP_______, TP_______,                       TP______0, TP______0, TP____DOT, TP_______, TP_______,
+                                                           TP_______, TP_______, TP_______, TP_______, TP_______, TP_______
   ),
 };
 
@@ -157,6 +162,7 @@ void keyboard_post_init_user(void) {
 #define black {0, 0, 0}
 
 const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
+    //Nav Layer
     [1] = {
            //Left hand, columns 1 - 6
            //lock screen, tab, no, lshift, no
@@ -203,6 +209,7 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
            yellow, black, black, black
         },
 
+    //Num Layer
     [2] = {
             //Left hand, columns 1 - 6
             black, black, black, black, black,
