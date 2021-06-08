@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
+
 enum custom_keycodes {
     RGB_SLD = ML_SAFE_RANGE,
 };
@@ -47,56 +48,89 @@ void keyboard_post_init_user(void) {
     rgb_matrix_enable();
 }
 
+#define red {0, 255, 255}
+#define blue {173, 255, 255}
+#define green {100, 255, 255}
+#define yellow {50, 255, 255}
+#define orange {255, 255, 255}
+#define black {0, 0, 0}
+
 const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
     [1] = {
            //Left hand, columns 1 - 6
            //lock screen, tab, no, lshift, no
-           {0, 255, 255}, {100, 255, 255}, {0, 0, 0}, {100, 255, 255}, {0, 0, 0},
+           red, green, black, green, black,
            //no, no, anfn, no, no
-           {0, 0, 0}, {0, 0, 0}, {50, 255, 255}, {0, 0, 0}, {0, 0, 0},
+           black, black, yellow, black, black,
            //no, no, no, no, no
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+           black, black, black, black, black,
            //no, fre, no, cig, no
-           {0, 0, 0}, {50, 255, 255}, {0, 0, 0}, {50, 255, 255}, {0, 0, 0},
+           black, yellow, black, yellow, black,
            //no, [, {, = +, lcmd+layer 1
-           {0, 0, 0}, {100, 255, 255}, {100, 255, 255}, {255, 255, 255}, {0, 255, 255},
+           black, green, green, orange, red,
            //no, ], }, >
-           {0, 0, 0}, {100, 255, 255}, {100, 255, 255}, {100, 255, 255},
+           black, green, green, green,
 
            //Left hand, column 7
            //brightness down, toggle leds, toggle pattern
-           {173, 255, 255}, {173, 255, 255}, {173, 255, 255},
+           blue, blue, blue,
 
            //Left hand, 3 thumb, paddle
            //no, layer 1, no, no
-           {0, 0, 0}, {0, 255, 255}, {0, 0, 0}, {0, 0, 0},
+           black, red, black, black,
 
            //Right hand, columns 1 - 6 (right to left)
            //reset, no, no, Wally, iTerm
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+           red, black, black, yellow, yellow,
            //no, no, no, Notes, Eclipse
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+           black, black, black, yellow, yellow,
            //no, next tab, left, next win, VSCode
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+           black, green, green, green, yellow,
            //no, next tab, up, next win, Zoom
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+           black, green, green, green, yellow,
            //no, prev tab, down, prev win, Slack
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+           black, green, green, green, yellow,
            //no, prev tab, left, prev win
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+           black, green, green, green,
 
            //Right hand, column 7
            //brightness up, vol up, vol down
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+           blue, blue, blue,
 
            //Right hand, 3 thumb, paddle
            //Chrome, no, no, no
-           {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}
+           yellow, black, black, black
         },
 
-    [2] = {{0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255},
-           {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}, {0, 255, 255}},
+    [2] = {
+            //Left hand, columns 1 - 6
+            black, black, black, black, black,
+            black, black, black, black, black,
+            black, black, black, black, black,
+            black, black, black, black, black,
+            black, black, black, black, black,
+            black, black, black, black,
 
+            //Left hand, column 7
+            black, black, black,
+
+            //Left hand, 3 thumb, paddle
+            black, black, black, black,
+
+            //Right hand, columns 1 - 6 (right to left)
+            black, black, black, black, black,
+            black, black, black, black, black,
+            black, yellow, yellow, yellow, yellow,
+            black, yellow, yellow, yellow, yellow,
+            black, yellow, yellow, yellow, yellow,
+            black, black, black, black,
+
+            //Right hand, column 7
+            black, black, black,
+
+            //Right hand, 3 thumb, paddle
+            black, black, black, black
+        },
 };
 
 void set_layer_color(int layer) {
