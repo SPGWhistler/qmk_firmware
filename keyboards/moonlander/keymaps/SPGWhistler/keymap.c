@@ -14,28 +14,28 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_TRANSPARENT,                 KC_TRANSPARENT,                        KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
-    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           LALT(LCTL(LGUI(LSFT(KC_S)))),   TD(DANCE_1),                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLASH,
-    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           LALT(LCTL(LGUI(LSFT(KC_M)))),   TD(DANCE_2),                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCOLON,      KC_QUOTE,
-    KC_LSHIFT,      KC_Z,           KC_X,           TD(DANCE_0),    KC_V,           KC_B,                                                                                  KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RSHIFT,
-    KC_TRANSPARENT, KC_LCTRL,       KC_LALT,        KC_LGUI,        LM(1,MOD_LGUI),                 LCTL(LGUI(LSFT(KC_SPACE))),     LALT(LCTL(LGUI(LSFT(KC_SPACE)))),                      KC_SPACE,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_TRANSPARENT,                                          KC_TRANSPARENT, KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
+    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           LALT(LCTL(LGUI(LSFT(KC_S)))),                            TD(DANCE_1),    KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLASH,
+    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           LALT(LCTL(LGUI(LSFT(KC_M)))),                            TD(DANCE_2),    KC_H,           KC_J,           KC_K,           KC_L,           KC_SCOLON,      KC_QUOTE,
+    KC_LSHIFT,      KC_Z,           KC_X,           TD(DANCE_0),    KC_V,           KC_B,                                                                                    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RSHIFT,
+    KC_TRANSPARENT, KC_LCTRL,       KC_LALT,        KC_LGUI,        LM(1,MOD_LGUI),                 LCTL(LGUI(LSFT(KC_SPACE))),         LALT(LCTL(LGUI(LSFT(KC_SPACE)))),                    KC_SPACE,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_BSPACE,  MO(1),  MO(2),      LGUI(KC_SPACE),  KC_ENTER,  KC_SPACE
   ),
   [1] = LAYOUT_moonlander(
-    LALT(LCTL(LGUI(LSFT(KC_L)))),KC_NO,                       KC_NO,          KC_NO,                       KC_NO,          KC_NO,          RGB_VAD,                                        RGB_VAI,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          RESET,
-    KC_TAB,                      KC_NO,                       KC_NO,          LALT(LCTL(LGUI(LSFT(KC_3)))),KC_LBRACKET,    KC_RBRACKET,    RGB_TOG,                                        KC_AUDIO_VOL_UP,LCTL(LGUI(LSFT(KC_TAB))),LCTL(LGUI(LSFT(KC_TAB))),LCTL(LGUI(KC_TAB)),LCTL(LGUI(KC_TAB)),KC_NO,          KC_NO,
-    KC_NO,                       LALT(LCTL(LGUI(LSFT(KC_1)))),KC_NO,          KC_NO,                       KC_LCBR,        KC_RCBR,        RGB_MOD,                                                                        KC_AUDIO_VOL_DOWN,KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_NO,          KC_NO,
-    KC_LSHIFT,                   KC_NO,                       KC_NO,          LALT(LCTL(LGUI(LSFT(KC_2)))),TD(DANCE_3),    KC_RABK,                                        LGUI(LSFT(KC_GRAVE)),LGUI(LSFT(KC_GRAVE)),LGUI(KC_GRAVE), LGUI(KC_GRAVE), LALT(LCTL(LGUI(KC_6))),LALT(LCTL(LGUI(KC_7))),
-    KC_NO,                       KC_NO,                       KC_NO,          KC_NO,                       KC_TRANSPARENT, KC_NO,                                                                                                          KC_NO,          LALT(LCTL(LGUI(KC_2))),LALT(LCTL(LGUI(KC_1))),LALT(LCTL(LGUI(KC_3))),LALT(LCTL(LGUI(KC_4))),LALT(LCTL(LGUI(KC_5))),
-    KC_NO,                       KC_NO,                       KC_NO,          KC_NO,          KC_NO,       LALT(LCTL(LGUI(KC_8)))
+    LALT(LCTL(LGUI(LSFT(KC_L)))), KC_NO,                        KC_NO,          KC_NO,                        KC_NO,                   KC_NO,          RGB_VAD,                                   RGB_VAI,           KC_NO,                    KC_NO,                    KC_NO,                  KC_NO,                  KC_NO,                  RESET,
+    KC_TAB,                       KC_NO,                        KC_NO,          LALT(LCTL(LGUI(LSFT(KC_3)))), KC_LBRACKET,             KC_RBRACKET,    RGB_TOG,                                   KC_AUDIO_VOL_UP,   LCTL(LGUI(LSFT(KC_TAB))), LCTL(LGUI(LSFT(KC_TAB))), LCTL(LGUI(KC_TAB)),     LCTL(LGUI(KC_TAB)),     KC_NO,                  KC_NO,
+    KC_NO,                        LALT(LCTL(LGUI(LSFT(KC_1)))), KC_NO,          KC_NO,                        KC_LCBR,                 KC_RCBR,        RGB_MOD,                                   KC_AUDIO_VOL_DOWN, KC_LEFT,                  KC_DOWN,                  KC_UP,                  KC_RIGHT,               KC_NO,                  KC_NO,
+    KC_LSHIFT,                    KC_NO,                        KC_NO,          LALT(LCTL(LGUI(LSFT(KC_2)))), TD(DANCE_3),             KC_RABK,                                                                      LGUI(LSFT(KC_GRAVE)),     LGUI(LSFT(KC_GRAVE)),     LGUI(KC_GRAVE),         LGUI(KC_GRAVE),         LALT(LCTL(LGUI(KC_6))), LALT(LCTL(LGUI(KC_7))),
+    KC_NO,                        KC_NO,                        KC_NO,          KC_NO,                        KC_TRANSPARENT,                          KC_NO,                                                 KC_NO,                           LALT(LCTL(LGUI(KC_2))),   LALT(LCTL(LGUI(KC_1))), LALT(LCTL(LGUI(KC_3))), LALT(LCTL(LGUI(KC_4))), LALT(LCTL(LGUI(KC_5))),
+                                                                                                                                                       KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, LALT(LCTL(LGUI(KC_8)))
   ),
   [2] = LAYOUT_moonlander(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_7,           KC_8,           KC_9,           KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          KC_NO,          KC_NO,          KC_4,           KC_5,           KC_6,           KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_1,           KC_2,           KC_3,           KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          KC_0,           KC_0,           KC_DOT,         KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_TRANSPARENT,                 KC_NO,          KC_NO,          KC_NO
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                KC_NO, KC_NO, KC_7,  KC_8,  KC_9,   KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                KC_NO, KC_NO, KC_4,  KC_5,  KC_6,   KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                              KC_NO, KC_1,  KC_2,  KC_3,   KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO,                                KC_NO,        KC_0,  KC_0,  KC_DOT, KC_NO, KC_NO,
+                                              KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO
   ),
 };
 
