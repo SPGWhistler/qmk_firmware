@@ -2,10 +2,6 @@
 #include "version.h"
 
 
-enum custom_keycodes {
-    RGB_SLD = ML_SAFE_RANGE,
-};
-
 enum tap_dance_codes {
     DANCE_0,
     DANCE_1,
@@ -13,30 +9,112 @@ enum tap_dance_codes {
     DANCE_3,
 };
 
+//Redefine all the constants I need to make them an even number of spaces.
+enum custom_keycodes {
+    TP_RGBSLD = ML_SAFE_RANGE,
+    TP_BSLASH = KC_BSLASH,
+    TP_BSPACE = KC_BSPACE,
+    TP__COMMA = KC_COMMA,
+    TP____DOT = KC_DOT,
+    TP__ENTER = KC_ENTER,
+    TP_ESCAPE = KC_ESCAPE,
+    TP__GRAVE = KC_GRAVE,
+    TP___LALT = KC_LALT,
+    TP__LCTRL = KC_LCTRL,
+    TP___LGUI = KC_LGUI,
+    TP_LSHIFT = KC_LSHIFT,
+    TP__MINUS = KC_MINUS,
+    TP__QUOTE = KC_QUOTE,
+    TP_RSHIFT = KC_RSHIFT,
+    TP_SCOLON = KC_SCOLON,
+    TP__SLASH = KC_SLASH,
+    TP__SPACE = KC_SPACE,
+    TP____TAB = KC_TAB,
+    TP_TRANSP = KC_TRANSPARENT,
+    TP__LBRKT = KC_LBRACKET,
+    TP___LCBR = KC_LCBR,
+    TP_____NO = KC_NO,
+    TP__RBRKT = KC_RBRACKET,
+    TP___RCBR = KC_RCBR,
+    TP___RABK = KC_RABK,
+    TP___LEFT = KC_LEFT,
+    TP__RIGHT = KC_RIGHT,
+    TP_____UP = KC_UP,
+    TP___DOWN = KC_DOWN,
+    TP______1 = KC_1,
+    TP______2 = KC_2,
+    TP______3 = KC_3,
+    TP______4 = KC_4,
+    TP______5 = KC_5,
+    TP______6 = KC_6,
+    TP______7 = KC_7,
+    TP______8 = KC_8,
+    TP______9 = KC_9,
+    TP______0 = KC_0,
+    TP______A = KC_A,
+    TP______B = KC_B,
+    TP______C = KC_C,
+    TP______D = KC_D,
+    TP______E = KC_E,
+    TP______F = KC_F,
+    TP______G = KC_G,
+    TP______H = KC_H,
+    TP______I = KC_I,
+    TP______J = KC_J,
+    TP______K = KC_K,
+    TP______L = KC_L,
+    TP______M = KC_M,
+    TP______N = KC_N,
+    TP______O = KC_O,
+    TP______P = KC_P,
+    TP______Q = KC_Q,
+    TP______R = KC_R,
+    TP______S = KC_S,
+    TP______T = KC_T,
+    TP______U = KC_U,
+    TP______V = KC_V,
+    TP______W = KC_W,
+    TP______X = KC_X,
+    TP______Y = KC_Y,
+    TP______Z = KC_Z,
+    TP_DNCE00 = TD(DANCE_0),
+    TP_DNCE01 = TD(DANCE_1),
+    TP_DNCE02 = TD(DANCE_2),
+    TP_DNCE03 = TD(DANCE_3),
+    TP___MO01 = MO(1),
+    TP___MO02 = MO(2),
+    TP_LGUISP = LGUI(KC_SPACE),
+    TP_LMMGUI = LM(1,MOD_LGUI),
+    TP__LLLSP = LCTL(LGUI(LSFT(KC_SPACE))),
+    TP_LLLLSP = LALT(LCTL(LGUI(LSFT(KC_SPACE)))),
+    TP__LLLLS = LALT(LCTL(LGUI(LSFT(KC_S)))),
+    TP__LLLLM = LALT(LCTL(LGUI(LSFT(KC_M)))),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_TRANSPARENT,                                          KC_TRANSPARENT, KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
-    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           LALT(LCTL(LGUI(LSFT(KC_S)))),                            TD(DANCE_1),    KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLASH,
-    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           LALT(LCTL(LGUI(LSFT(KC_M)))),                            TD(DANCE_2),    KC_H,           KC_J,           KC_K,           KC_L,           KC_SCOLON,      KC_QUOTE,
-    KC_LSHIFT,      KC_Z,           KC_X,           TD(DANCE_0),    KC_V,           KC_B,                                                                                    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RSHIFT,
-    KC_TRANSPARENT, KC_LCTRL,       KC_LALT,        KC_LGUI,        LM(1,MOD_LGUI),                 LCTL(LGUI(LSFT(KC_SPACE))),         LALT(LCTL(LGUI(LSFT(KC_SPACE)))),                    KC_SPACE,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                    KC_BSPACE,  MO(1),  MO(2),      LGUI(KC_SPACE),  KC_ENTER,  KC_SPACE
+    TP__GRAVE, TP______1, TP______2, TP______3, TP______4, TP______5, TP_TRANSP, TP_TRANSP, TP______6, TP______7, TP______8, TP______9, TP______0, TP__MINUS,
+    TP____TAB, TP______Q, TP______W, TP______E, TP______R, TP______T, TP__LLLLS, TP_DNCE02, TP______Y, TP______U, TP______I, TP______O, TP______P, TP_BSLASH,
+    TP_ESCAPE, TP______A, TP______S, TP______D, TP______F, TP______G, TP__LLLLM, TP_DNCE01, TP______H, TP______J, TP______K, TP______L, TP_SCOLON, TP__QUOTE,
+    TP_LSHIFT, TP______Z, TP______X, TP_DNCE00, TP______V, TP______B, TP______N, TP______M, TP__COMMA, TP____DOT, TP__SLASH, TP_RSHIFT,
+    TP_TRANSP, TP__LCTRL, TP___LALT, TP___LGUI, TP_LMMGUI, TP__LLLSP, TP_LLLLSP, TP__SPACE, TP_TRANSP, TP_TRANSP, TP_TRANSP, TP_TRANSP,
+    TP_BSPACE, TP___MO01, TP___MO02, TP_LGUISP, TP__ENTER, TP__SPACE
   ),
   [1] = LAYOUT_moonlander(
-    LALT(LCTL(LGUI(LSFT(KC_L)))), KC_NO,                        KC_NO,          KC_NO,                        KC_NO,                   KC_NO,          RGB_VAD,                                   RGB_VAI,           KC_NO,                    KC_NO,                    KC_NO,                  KC_NO,                  KC_NO,                  RESET,
-    KC_TAB,                       KC_NO,                        KC_NO,          LALT(LCTL(LGUI(LSFT(KC_3)))), KC_LBRACKET,             KC_RBRACKET,    RGB_TOG,                                   KC_AUDIO_VOL_UP,   LCTL(LGUI(LSFT(KC_TAB))), LCTL(LGUI(LSFT(KC_TAB))), LCTL(LGUI(KC_TAB)),     LCTL(LGUI(KC_TAB)),     KC_NO,                  KC_NO,
-    KC_NO,                        LALT(LCTL(LGUI(LSFT(KC_1)))), KC_NO,          KC_NO,                        KC_LCBR,                 KC_RCBR,        RGB_MOD,                                   KC_AUDIO_VOL_DOWN, KC_LEFT,                  KC_DOWN,                  KC_UP,                  KC_RIGHT,               KC_NO,                  KC_NO,
-    KC_LSHIFT,                    KC_NO,                        KC_NO,          LALT(LCTL(LGUI(LSFT(KC_2)))), TD(DANCE_3),             KC_RABK,                                                                      LGUI(LSFT(KC_GRAVE)),     LGUI(LSFT(KC_GRAVE)),     LGUI(KC_GRAVE),         LGUI(KC_GRAVE),         LALT(LCTL(LGUI(KC_6))), LALT(LCTL(LGUI(KC_7))),
-    KC_NO,                        KC_NO,                        KC_NO,          KC_NO,                        KC_TRANSPARENT,                          KC_NO,                                                 KC_NO,                           LALT(LCTL(LGUI(KC_2))),   LALT(LCTL(LGUI(KC_1))), LALT(LCTL(LGUI(KC_3))), LALT(LCTL(LGUI(KC_4))), LALT(LCTL(LGUI(KC_5))),
-                                                                                                                                                       KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO, LALT(LCTL(LGUI(KC_8)))
+    LALT(LCTL(LGUI(LSFT(TP______L)))), TP_____NO,                         TP_____NO, TP_____NO,                         TP_____NO,   TP_____NO, RGB_VAD,               RGB_VAI,                     TP_____NO,                   TP_____NO,                   TP_____NO,                   TP_____NO,             TP_____NO, RESET,
+    TP____TAB,                         TP_____NO,                         TP_____NO, LALT(LCTL(LGUI(LSFT(TP______3)))), TP__LBRKT,   TP__RBRKT, RGB_TOG,               KC_AUDIO_VOL_UP,             LCTL(LGUI(LSFT(TP____TAB))), LCTL(LGUI(LSFT(TP____TAB))), LCTL(LGUI(TP____TAB)),       LCTL(LGUI(TP____TAB)), TP_____NO, TP_____NO,
+    TP_____NO,                         LALT(LCTL(LGUI(LSFT(TP______1)))), TP_____NO, TP_____NO,                         TP___LCBR,   TP___RCBR, RGB_MOD,               KC_AUDIO_VOL_DOWN,           TP___LEFT,                   TP___DOWN,                   TP_____UP,                   TP__RIGHT,             TP_____NO, TP_____NO,
+    TP_LSHIFT,                         TP_____NO,                         TP_____NO, LALT(LCTL(LGUI(LSFT(TP______2)))), TP_DNCE03, TP___RABK, LGUI(LSFT(TP__GRAVE)), LGUI(LSFT(TP__GRAVE)),       LGUI(TP__GRAVE),             LGUI(TP__GRAVE),             LALT(LCTL(LGUI(TP______6))), LALT(LCTL(LGUI(TP______7))),
+    TP_____NO,                         TP_____NO,                         TP_____NO, TP_____NO,                         TP_TRANSP,   TP_____NO, TP_____NO,             LALT(LCTL(LGUI(TP______2))), LALT(LCTL(LGUI(TP______1))), LALT(LCTL(LGUI(TP______3))), LALT(LCTL(LGUI(TP______4))), LALT(LCTL(LGUI(TP______5))),
+    TP_____NO,                         TP_____NO,                         TP_____NO, TP_____NO,                         TP_____NO,   LALT(LCTL(LGUI(TP______8)))
   ),
   [2] = LAYOUT_moonlander(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                KC_NO, KC_NO, KC_7,  KC_8,  KC_9,   KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                KC_NO, KC_NO, KC_4,  KC_5,  KC_6,   KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                              KC_NO, KC_1,  KC_2,  KC_3,   KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO,                                KC_NO,        KC_0,  KC_0,  KC_DOT, KC_NO, KC_NO,
-                                              KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO
+    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO,
+    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP______7, TP______8, TP______9, TP_____NO, TP_____NO,
+    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP______4, TP______5, TP______6, TP_____NO, TP_____NO,
+    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP______1, TP______2, TP______3, TP_____NO, TP_____NO,
+    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP______0, TP______0, TP____DOT, TP_____NO, TP_____NO,
+    TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO, TP_____NO
   ),
 };
 
@@ -167,6 +245,7 @@ void rgb_matrix_indicators_user(void) {
     }
 }
 
+/*
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case RGB_SLD:
@@ -177,6 +256,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+*/
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     ML_LED_1(false);
