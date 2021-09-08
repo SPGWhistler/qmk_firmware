@@ -27,6 +27,7 @@ enum custom_keycodes {
     TP___LGUI = KC_LGUI,
     TP_LSHIFT = KC_LSHIFT,
     TP__MINUS = KC_MINUS,
+    TP___PLUS = KC_KP_PLUS,
     TP__QUOTE = KC_QUOTE,
     TP_RSHIFT = KC_RSHIFT,
     TP_SCOLON = KC_SCOLON,
@@ -42,6 +43,7 @@ enum custom_keycodes {
     TP__RIGHT = KC_RIGHT,
     TP_____UP = KC_UP,
     TP___DOWN = KC_DOWN,
+    TP__EQUAL = KC_EQUAL,
     TP_DNCE00 = TD(DANCE_0),
     TP_DNCE01 = TD(DANCE_1),
     TP_DNCE02 = TD(DANCE_2),
@@ -123,17 +125,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TP____TAB, TP______Q, TP______W, TP______E, TP______R, TP______T, TP__LLLLS,                       TP_DNCE02, TP______Y, TP______U, TP______I, TP______O, TP______P, TP_BSLASH,
     TP_ESCAPE, TP______A, TP______S, TP______D, TP______F, TP______G, TP__LLLLM,                       TP_DNCE01, TP______H, TP______J, TP______K, TP______L, TP_SCOLON, TP__QUOTE,
     TP_LSHIFT, TP______Z, TP______X, TP_DNCE00, TP______V, TP______B,                                             TP______N, TP______M, TP__COMMA, TP____DOT, TP__SLASH, TP_RSHIFT,
-    TP__LLLL4, TP__LCTRL, TP___LALT, TP___LGUI, TP_LMMGUI,                       TP__LLLSP, TP_LLLLSP,                       TP__SPACE, TP_TRANSP, TP_TRANSP, TP_TRANSP, TP_______,
-                                                           TP_BSPACE, TP___MO01, TP___MO02, TP_LGUISP, TP__ENTER, TP__SPACE
+    TP__LLLL4, TP__LCTRL, TP___LALT, TP___LGUI, TP_LMMGUI,                       TP__LLLSP, TP_LLLLSP,                       TP___MO01, TP_TRANSP, TP_TRANSP, TP_TRANSP, TP_______,
+                                                           TP_BSPACE, TP___MO02, TP___MO02, TP_LGUISP, TP__ENTER, TP__SPACE
   ),
   //Nav Layer
   [1] = LAYOUT_moonlander(
     TP__LLLLL, TP_______, TP_______, TP_______, TP_______, TP_______, TP_RGBVAD,                       TP_RGBVAI, TP_______, TP_______, TP_______, TP_______, TP_______, TP__RESET,
     TP____TAB, TP_______, TP_______, TP__LLLL3, TP__LBRKT, TP__RBRKT, TP_RGBTOG,                       TP__VOLUP, TP__LLLTB, TP__LLLTB, TP___LLTB, TP___LLTB, TP_______, TP_______,
     TP_______, TP__LLLL1, TP_______, TP_______, TP___LCBR, TP___RCBR, TP_RGBMOD,                       TP__VOLDN, TP___LEFT, TP___DOWN, TP_____UP, TP__RIGHT, TP_______, TP_______,
-    TP_LSHIFT, TP_______, TP_______, TP__LLLL2, TP_DNCE03, TP___RABK,                                             TP__LLGRV, TP__LLGRV, TP___LGRV, TP___LGRV, TP___LLL6, TP___LLL7,
-    TP_______, TP_______, TP_______, TP_______, TP_TRANSP,                       TP_______, TP_______,                       TP___LLL2, TP___LLL1, TP___LLL3, TP___LLL4, TP___LLL5,
-                                                           TP_______, TP_______, TP_______, TP_______, TP_______, TP___LLL8
+    TP_LSHIFT, TP_______, TP_______, TP__LLLL2, TP__EQUAL, TP___PLUS,                                             TP__LLGRV, TP__LLGRV, TP___LGRV, TP___LGRV, TP___LLL6, TP___LLL7,
+    TP_______, TP_______, TP_______, TP_______, TP_TRANSP,                       TP_______, TP_______,                       TP_______, TP___LLL1, TP___LLL3, TP___LLL4, TP___LLL5,
+                                                           TP_______, TP_______, TP_______, TP_______, TP_______, TP___LLL2
   ),
   //Num Layer
   [2] = LAYOUT_moonlander(
