@@ -76,6 +76,11 @@ enum custom_keycodes {
     TP__LLLL2 = LALT(LCTL(LGUI(LSFT(KC_2)))),
     TP__LLLL3 = LALT(LCTL(LGUI(LSFT(KC_3)))),
     TP__LLLL4 = LALT(LCTL(LGUI(LSFT(KC_4)))),
+    TP____LL1 = LCTL(LGUI(KC_1)),
+    TP____LL2 = LCTL(LGUI(KC_2)),
+    TP____LL3 = LCTL(LGUI(KC_3)),
+    TP____LL4 = LCTL(LGUI(KC_4)),
+    TP____LL5 = LCTL(LGUI(KC_5)),
     TP_RGBVAD = RGB_VAD,
     TP_RGBTOG = RGB_TOG,
     TP_RGBMOD = RGB_MOD,
@@ -133,12 +138,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   //Nav Layer
   [1] = LAYOUT_moonlander(
-    TP__LLLLL, TP_______, TP_______, TP_______, TP_______, TP_______, TP_RGBVAD,                       TP_RGBVAI, TP_______, TP_______, TP_______, TP_______, TP_______, TP__RESET,
+    TP__LLLLL, TP____LL1, TP____LL2, TP____LL3, TP____LL4, TP____LL5, TP_RGBVAD,                       TP_RGBVAI, TP_______, TP_______, TP_______, TP_______, TP_______, TP__RESET,
     TP____TAB, TP_______, TP_______, TP__LLLL3, TP__LBRKT, TP__RBRKT, TP_RGBTOG,                       TP__VOLUP, TP__LLLTB, TP__LLLTB, TP___LLTB, TP___LLTB, TP_______, TP_______,
     TP_______, TP__LLLL1, TP_______, TP_______, TP___LCBR, TP___RCBR, TP_RGBMOD,                       TP__VOLDN, TP___LEFT, TP___DOWN, TP_____UP, TP__RIGHT, TP_______, TP_______,
     TP_LSHIFT, TP_______, TP_______, TP__LLLL2, TP__EQUAL, TP___PLUS,                                             TP__LLGRV, TP__LLGRV, TP___LGRV, TP___LGRV, TP___LLL6, TP___LLL7,
     TP_______, TP_______, TP_______, TP_______, TP_TRANSP,                       TP_______, TP_______,                       TP___LLL2, TP___LLL1, TP___LLL3, TP___LLL4, TP___LLL5,
-                                                           TP_______, TP_______, TP_______, TP_______, TP_______, TP_______
+                                                           TP_______, TP_______, TP_______, TP_______, TP_______, TP___LLL8
   ),
   //Num Layer
   [2] = LAYOUT_moonlander(
